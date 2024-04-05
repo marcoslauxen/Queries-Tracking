@@ -34,7 +34,7 @@ const App = () => {
             <ToastContainer />
             <h1 className="text-3xl font-bold mb-4">Rastreamento de Consultas de Clientes</h1>
             <div className="mb-4">
-                <input type="text" placeholder="Adicionar nova consulta" className="border border-gray-400 p-2 mr-2 rounded" value={newConsultation} onChange={handleNewConsultation} />
+                <input type="text" placeholder="Adicionar nova consulta" className="border border-gray-400 p-2 mr-2 rounded outline-none" value={newConsultation} onChange={handleNewConsultation} />
                 <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded" onClick={handleAddConsultation}>Adicionar</button>
             </div>
             <ul>{consultations.map((consultation, index) => (
