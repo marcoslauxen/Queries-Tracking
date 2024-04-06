@@ -11,7 +11,7 @@ const App = () => {
     const storedConsultations = JSON.parse(
       localStorage.getItem("consultations")
     );
-    if (storedConsultations.length > 0) {
+    if (storedConsultations.length) {
       setConsultations(storedConsultations);
     }
   }, []);
