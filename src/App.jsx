@@ -11,7 +11,7 @@ const App = () => {
     const storedConsultations = JSON.parse(
       localStorage.getItem("consultations")
     );
-    if (storedConsultations.length) {
+    if (storedConsultations.length > 0) {
       setConsultations(storedConsultations);
     }
   }, []);
@@ -43,26 +43,27 @@ const App = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 mt-32 rounded w-1/2 bg-slate-600">
       <ToastContainer />
-      <h1 className="text-3xl font-bold mb-4">
+      <h1 className="md:text-3xl text-2xl font-bold mb-0 md:mb-4 mt-4 text-center text-white">
         Rastreamento de Consultas de Clientes
       </h1>
-      <div className="mb-4">
+      <div className="md:mt-16 mt-5 flex flex-col md:flex-row items-center mb-10 justify-betwee w-ful">
         <input
           type="text"
           placeholder="Adicionar nova consulta"
-          className="border border-gray-400 p-2 mr-2 rounded outline-none"
+          className="w-full pr-10 bg-transparent font-semibold tracking-tight placeholder:text-slate-500 placeholder:text-xl md:placeholder:text-2xl lg:placeholder:text-3xl outline-none text-3xl text-slate-400 mb-10 md:mb-0"
           value={newConsultation}
           onChange={handleNewConsultation}
         />
         <button
-          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+          className="bg-lime-400 hover:bg-lime-500 text-white py-2 px-4 rounded outline-none font-bold"
           onClick={handleAddConsultation}
         >
           Adicionar
         </button>
       </div>
+      <hr className="bg-slate-700 mb-5" />
       <ul>
         {consultations.map((consultation, index) => (
           <ConsultationItem
